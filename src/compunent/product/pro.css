@@ -8,3 +8,13 @@
   margin-left: 10px;
   margin-right: 75px;
 }
+
+.imges {
+  width: 132px;
+  height: 66px;
+  margin-top: -37px;
+  margin-left: 75px;
+  position: relative;
+  right: 55px;
+  top: 10px;
+}
