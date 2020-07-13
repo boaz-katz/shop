@@ -7,10 +7,10 @@ class Product extends React.Component {
     amount: this.props.amount,
   };
   incrementCount = () => {
-    !this.state.amount
-      ? this.setState({ amount: 0 })
-      : this.setState(({ amount }) => ({ amount: amount - 1 }));
-    this.props.remove();
+    if (this.state.amount) {
+      this.setState(({ amount }) => ({ amount: amount - 1 }));
+      this.props.remove();
+    }
   };
   resetCount = () => {
     if (this.state.amount < this.props.amount) {
