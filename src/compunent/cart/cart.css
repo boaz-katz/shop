@@ -1,0 +1,14 @@
+.CART {
+  width: 100px;
+  height: 100px;
+  text-align: left;
+  position: relative;
+  left: 521px;
+}
+.caunter {
+  margin-left: 551px;
+  font-family: "Times New Roman", Times, serif;
+
+  font-size: 35px;
+  color: red;
+}

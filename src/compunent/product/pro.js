@@ -7,18 +7,31 @@ class Product extends React.Component {
     amount: this.props.amount,
   };
   incrementCount = () => {
-    this.setState(({ amount }) => ({ amount: amount - 1 }));
+    !this.state.amount
+      ? this.setState({ amount: 0 })
+      : this.setState(({ amount }) => ({ amount: amount - 1 }));
+    this.props.remove();
+  };
+  resetCount = () => {
+    if (this.state.amount < this.props.amount) {
+      this.setState(({ amount }) => ({ amount: amount + 1 }));
+
+      this.props.add();
+    }
   };
 
   render() {
     return (
       <div>
         <div className="Product">
-          <p>{this.props.title}</p>
-          <img className="imges" src={this.props.imgis} />
-          <div>Count: {this.state.amount}</div>
+          <p className="titel">{this.props.title}</p>
+          <img className="img" src={this.props.img} />
+          <div> left: {this.state.amount}</div>
           <div>
-            <button onClick={this.incrementCount}>Increment Count</button>
+            <button onClick={this.incrementCount}>add</button>
+            <span>
+              <button onClick={this.resetCount}> return </button>
+            </span>
           </div>
         </div>
       </div>
