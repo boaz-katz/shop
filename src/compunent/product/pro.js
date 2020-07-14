@@ -1,41 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./pro.css";
 
-class Product extends React.Component {
-  state = {
-    amount: this.props.amount,
-  };
-  incrementCount = () => {
-    if (this.state.amount) {
-      this.setState(({ amount }) => ({ amount: amount - 1 }));
-      this.props.remove();
-    }
-  };
-  resetCount = () => {
-    if (this.state.amount < this.props.amount) {
-      this.setState(({ amount }) => ({ amount: amount + 1 }));
+const Product = (props) => {
+  const [cunt, setcunt] = useState(props.amount);
 
-      this.props.add();
+  const incrementCount = () => {
+    if (cunt) {
+      setcunt(cunt - 1);
+      props.remove();
     }
   };
 
-  render() {
-    return (
-      <div>
-        <div className="Product">
-          <p className="titel">{this.props.title}</p>
-          <img className="img" src={this.props.img} />
-          <div> left: {this.state.amount}</div>
-          <div>
-            <button onClick={this.incrementCount}>add</button>
-            <span>
-              <button onClick={this.resetCount}> return </button>
-            </span>
-          </div>
+  const resetCount = () => {
+    if (cunt < props.amount) {
+      setcunt(cunt + 1);
+
+      props.add();
+    }
+  };
+
+  return (
+    <div>
+      <div className="Product">
+        <p className="titel">{props.title}</p>
+        <img className="img" src={props.img} />
+        <div> left: {cunt}</div>
+        <div>
+          <button onClick={incrementCount}>add</button>
+          <span>
+            <button onClick={resetCount}> return </button>
+          </span>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default Product;
