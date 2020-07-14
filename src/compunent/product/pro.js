@@ -3,18 +3,18 @@ import React, { useState } from "react";
 import "./pro.css";
 
 const Product = (props) => {
-  const [cunt, setcunt] = useState(props.amount);
+  const [count, setcount] = useState(props.amount);
 
   const incrementCount = () => {
-    if (cunt) {
-      setcunt(cunt - 1);
+    if (count) {
+      setcount(count - 1);
       props.remove();
     }
   };
 
   const resetCount = () => {
-    if (cunt < props.amount) {
-      setcunt(cunt + 1);
+    if (count < props.amount) {
+      setcount(count + 1);
 
       props.add();
     }
@@ -25,7 +25,7 @@ const Product = (props) => {
       <div className="Product">
         <p className="titel">{props.title}</p>
         <img className="img" src={props.img} />
-        <div> left: {cunt}</div>
+        <div> left: {count}</div>
         <div>
           <button onClick={incrementCount}>add</button>
           <span>
