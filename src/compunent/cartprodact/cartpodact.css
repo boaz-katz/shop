@@ -1,0 +1,26 @@
+.cartProduct {
+  border-style: solid;
+  border-color: red;
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  float: right;
+  margin-left: 10px;
+  margin-right: 75px;
+}
+
+.imgcart {
+  width: 64px;
+  height: 63px;
+  margin-bottom: 10px;
+}
+.prodactcartcounter {
+  position: relative;
+  bottom: 48px;
+  left: 78px;
+}
+
+.cartbutton {
+  position: relative;
+  bottom: 63px;
+}

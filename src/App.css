@@ -5,3 +5,27 @@
   border-color: coral;
   height: 800px;
 }
+
+.cartarea {
+  position: absolute;
+  right: 917px;
+  top: 58px;
+  display: block;
+  margin-left: 300px;
+  border-style: solid;
+  border-color: blueviolet;
+  height: 500px;
+  width: 298p;
+}
+
+.prodacts {
+  position: absolute;
+  right: 18px;
+  top: 208px;
+  display: block;
+  margin-left: 300px;
+  border-style: solid;
+  border-color: red;
+  height: 555px;
+  width: 800px;
+}

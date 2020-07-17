@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./cart.css";
 
 function Cart(props) {
+  const [chosep, setchosep] = useState([]);
+
   return (
     <div>
       <div>

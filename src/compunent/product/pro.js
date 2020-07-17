@@ -9,6 +9,11 @@ const Product = (props) => {
     if (count) {
       setcount(count - 1);
       props.remove();
+
+      if (count + 1 > props.amount) {
+        props.addtocart();
+      } else {
+      }
     }
   };
 
@@ -26,6 +31,8 @@ const Product = (props) => {
         <p className="titel">{props.title}</p>
         <img className="img" src={props.img} />
         <div> left: {count}</div>
+        <div> {props.items}</div>
+
         <div>
           <button onClick={incrementCount}>add</button>
           <span>
