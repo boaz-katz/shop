@@ -13,12 +13,13 @@ const App = () => {
   const [Products, setProducts] = useState([]);
   const [Min1, setMin] = useState();
   const [Max1, setMax] = useState();
-
+  console.log(Products);
   useEffect(() => {
     axios.get("https://quilt-flax-chemistry.glitch.me/products").then((res) => {
       console.log(res.data);
+
+      let praices = res.data.map((prod) => prod.price);
       setProducts(res.data);
-      let praices = Products.map((prod) => prod.price);
       setMin(Math.min(...praices));
       setMax(Math.max(...praices));
     });
@@ -42,18 +43,10 @@ const App = () => {
     console.log("onChange: ", value);
   }
 
-  // function onAfterChange(value) {
-  //   axios.get("https://quilt-flax-chemistry.glitch.me/products").then((res) => {
-  //     const praicepro = res.data.filter;
+  function onAfterChange(value) {
+    console.log("onAfterChange: ", value);
+  }
 
-  //     setProducts([praicepro, Min1, Max1]);
-  //   });
-
-  //   console.log("onChange: ", value);
-  // }
-
-  console.log(Min1);
-  console.log(Max1);
   return (
     <div>
       <div className="App">
@@ -89,13 +82,13 @@ const App = () => {
                 max={Max1}
                 defaultValue={[Min1, Max1]}
                 onChange={onChange}
-                // onAfterChange={onAfterChange}
+                onAfterChange={onAfterChange}
               />
             ) : null}
           </div>
         </div>
 
-        {Products.filter((x) => x.price >= Max1 && x.price <= Min1).map(
+        {Products.filter((x) => x.price < Max1 && x.price > Min1).map(
           (items) => (
             <Prodact
               key={items.id}
