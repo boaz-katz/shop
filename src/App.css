@@ -1,3 +1,13 @@
+@import "~antd/dist/antd.css";
+.slider {
+  position: absolute;
+  display: block;
+  right: 15px;
+  top: 145px;
+  width: 100px;
+  height: 100px;
+}
+
 .App {
   display: block;
   margin-left: 200px;
